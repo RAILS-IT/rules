@@ -73,7 +73,7 @@ class DataConvert extends RulesActionBase {
     // Ensure valid contexts have been provided.
     // @todo check how this works. May need to use !empty to allow the selection
     // list to be used and give an empty value?
-    if (isset($rounding_behavior) && $target_type != 'integer') {
+    if (isset($rounding_behavior) && !empty($rounding_behavior) && $target_type != 'integer') {
       throw new InvalidArgumentException('A rounding behavior only makes sense with an integer target type.');
     }
 
